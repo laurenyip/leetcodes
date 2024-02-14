@@ -1,0 +1,36 @@
+assdfsdafsdfdsfclass Solution:
+    def convertTime(self, current: str, correct: str) -> int:
+        current_num = int(current.replace(':', ''))
+        correct_num = int(correct.replace(':', ''))
+       
+
+        counter = 0
+        
+        difference = correct_num - current_num # get difference
+        
+        minutes = difference % 100
+        print(minutes)
+        hours = difference - minutes
+        
+        if(hours<10):
+            counter += int(str(hours)[0])
+        else:
+            counter += int(str(hours)[:2])
+            print(counter)
+       
+        while minutes > 0:
+            fifteens = minutes // 15
+            
+            counter += fifteens
+            
+            minutes -= fifteens * 15
+            
+            fives = minutes // 5
+            counter += fives
+            
+            minutes -= fives *5
+            counter += minutes
+           
+            minutes=0
+
+        return counter
