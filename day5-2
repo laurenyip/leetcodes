@@ -1,4 +1,4 @@
-assdfsdafsdfdsfclass Solution:
+class Solution:
     def convertTime(self, current: str, correct: str) -> int:
         current_num = int(current.replace(':', ''))
         correct_num = int(correct.replace(':', ''))
